@@ -37,7 +37,8 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $user->name) }}">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ old('name', $user->name) }}">
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -46,7 +47,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="{{ old('email', $user->email) }}">
                                 @error('email')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -61,7 +63,8 @@
                                             <i class="fas fa-lock"></i>
                                         </div>
                                     </div>
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password">
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                        name="password">
                                 </div>
                                 @error('password')
                                     <div class="invalid-feedback">
@@ -71,21 +74,51 @@
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="number" class="form-control" name="phone" value="{{ old('phone', $user->phone) }}">
+                                <input type="number" class="form-control" name="phone"
+                                    value="{{ old('phone', $user->phone) }}">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Roles</label>
+                                <label>Position</label>
+                                <input type="text"
+                                    class="form-control @error('position')
+                                is-invalid
+                            @enderror"
+                                    name="position" value="{{ old('position', $user->position) }}">
+                                @error('position')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Department</label>
+                                <input type="text"
+                                    class="form-control @error('department')
+                                is-invalid
+                            @enderror"
+                                    name="department" value="{{ old('department', $user->department) }}">
+                                @error('department')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Role</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="role" value="ADMIN" class="selectgroup-input" {{ old('role', $user->role) == 'ADMIN' ? 'checked' : '' }}>
+                                        <input type="radio" name="role" value="ADMIN" class="selectgroup-input"
+                                            {{ old('role', $user->role) == 'ADMIN' ? 'checked' : '' }}>
                                         <span class="selectgroup-button">Admin</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="role" value="STAFF" class="selectgroup-input" {{ old('role', $user->role) == 'STAFF' ? 'checked' : '' }}>
+                                        <input type="radio" name="role" value="STAFF" class="selectgroup-input"
+                                            {{ old('role', $user->role) == 'STAFF' ? 'checked' : '' }}>
                                         <span class="selectgroup-button">Staff</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="role" value="USER" class="selectgroup-input" {{ old('role', $user->role) == 'USER' ? 'checked' : '' }}>
+                                        <input type="radio" name="role" value="USER" class="selectgroup-input"
+                                            {{ old('role', $user->role) == 'USER' ? 'checked' : '' }}>
                                         <span class="selectgroup-button">User</span>
                                     </label>
                                 </div>
