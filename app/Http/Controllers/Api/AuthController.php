@@ -64,4 +64,21 @@ class AuthController extends Controller
             'user' => $user,
         ], 200);
     }
+
+    //update fcm token
+    public function updateFcmToken(Request $request)
+    {
+        $request->validate([
+            'fcm_token' => 'required',
+        ]);
+
+        $user = $request->user();
+        $user->fcm_token = $request->fcm_token;
+        $user->save();
+
+        return response([
+            'message' => 'FCM token updated',
+            'user' => $user,
+        ], 200);
+    }
 }
